@@ -10,7 +10,7 @@ public class ConfirmationDialog {
 		int choice 	= JOptionPane.YES_OPTION, data;
 
 		while (choice == JOptionPane.YES_OPTION) {	
-			
+			try{
 			String command_string 	= JOptionPane.showInputDialog("Enter a number");
 			data 					= Integer.parseInt(command_string);
 			count++;
@@ -19,6 +19,10 @@ public class ConfirmationDialog {
 				count				= 0;
 			}
 			sum+=data;
+			}
+			catch (Exception ex){
+				continue;
+			}
 		}
 		JOptionPane.showMessageDialog(null, "The Resulting Sum is "+ sum);
 
